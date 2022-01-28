@@ -1,6 +1,7 @@
 package com.example.diceroller
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
 // AppCompatActivity is a Kotlin subclass of Android that provides, and should
@@ -12,5 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val roleButton: Button = findViewById(R.id.role_button)
+        roleButton.text = "Let's Roll"
     }
 }
