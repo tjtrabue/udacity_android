@@ -2,8 +2,9 @@ package com.example.diceroller
 
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import java.util.Random
 
 // AppCompatActivity is a Kotlin subclass of Android that provides, and should
 // always be extended by any custom Activities in order to support the max
@@ -16,9 +17,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val roleButton: Button = findViewById(R.id.role_button)
         roleButton.setOnClickListener {
-            // A Toast is a short-lived notification message that will
-            // disappear after a set duration.
-            Toast.makeText(this, "button clicked", Toast.LENGTH_SHORT).show()
+            rollDice()
         }
+    }
+
+    private fun rollDice() {
+        var resultText: TextView = findViewById(R.id.result_text)
+        val randomInt = Random().nextInt(6) + 1
+        resultText.text = randomInt.toString()
     }
 }
